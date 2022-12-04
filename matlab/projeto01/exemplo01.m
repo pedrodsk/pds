@@ -1,4 +1,5 @@
 %% Exemplo
+% DESCRIPTIVE TEXT
 b=1; 
 a=[1,-1,0.9];
 x=impseq(0,-20,120); 
@@ -9,7 +10,8 @@ title('Resposta ao Impulso');
 xlabel('n'); 
 ylabel('h[n]');
 
-%% 1
+%% Questão 01
+% DESCRIPTIVE TEXT
 t = 0:0.1:200;
 f = 0.01;
 a = 1;
@@ -41,7 +43,9 @@ plot(t, y+5*noise)
 title('Sinal + ruído (amplitude 5)');
 pause;
 close;
-%% 2 Filtro passa-baixas
+
+%% Questão 02 - Filtro passa-baixas
+% DESCRIPTIVE TEXT
 figure('units','normalized','outerposition',[0 0 1 1])
 B = 1/3*ones(3,1);
 out = filter(B,1,y+noise);
@@ -59,7 +63,8 @@ subplot(3,1,3)
 plot(t, out)
 title('Sinal + ruído com filtro M = 15'); 
 
-%% 3
+%% Questão 03 - 
+% DESCRIPTIVE TEXT
 a1=1;
 b1=[0.5, -0.5];
 
@@ -80,7 +85,8 @@ sum(abs(h2))
 freqz(b2,a2,Fs);
 sound(h2)
 
-%% 4
+%% Questão 04 - 
+% DESCRIPTIVE TEXT
 b3=1;
 N = 200;
 alfa = 0.5;
@@ -119,7 +125,9 @@ for alfa = 0:0.25:1.75
     sound(h3)
     pause;
 end
-%%
+
+%% Funções extras 
+% DESCRIPTIVE TEXT
 function [x,n] = impseq(n0,n1,n2)
     % Generates x(n) = delta(n-n0); n1 <= n <= n2
     % ----------------------------------------------
