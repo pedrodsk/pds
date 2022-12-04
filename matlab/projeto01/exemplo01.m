@@ -41,7 +41,8 @@ plot(t, y+5*noise)
 title('Sinal + ruído (amplitude 5)');
 pause;
 close;
-%% 2
+%% 2 Filtro passa-baixas
+figure('units','normalized','outerposition',[0 0 1 1])
 B = 1/3*ones(3,1);
 out = filter(B,1,y+noise);
 subplot(3,1,1)
@@ -59,13 +60,13 @@ plot(t, out)
 title('Sinal + ruído com filtro M = 15'); 
 
 %% 3
-a1=[1]
+a1=[1];
 b1=[0.5, -0.5];
 
 a2=[1];
 b2 = [0.5, 0.5];
 
-[y,Fs] = audioread('C:\ifpb\pds\aulas\04\projeto\musica.au');
+[y,Fs] = audioread('musica.au');
 sound(y)
 pause;
 h1=filter(b1,a1,y);
@@ -90,7 +91,7 @@ soundsc(a3);
 pause;
 freqz(b3,a3);
 
-[y2,Fs2] = audioread('C:\ifpb\pds\aulas\04\projeto\audio1_lab.wav');
+[y2,Fs2] = audioread('audio1_lab.wav');
 sound(y2)
 pause;
 
@@ -110,13 +111,13 @@ for alfa = 0:0.25:1.75
     %pause;
     freqz(b3,a3);
 
-    [y2,Fs2] = audioread('C:\ifpb\pds\aulas\04\projeto\audio1_lab.wav');
+    [y2,Fs2] = audioread('audio1_lab.wav');
     %sound(y2)
     %pause;
 
     h3=filter(b3,a3,y2);
     sound(h3)
-    %pause;
+    pause;
 end
 %%
 function [x,n] = impseq(n0,n1,n2)
