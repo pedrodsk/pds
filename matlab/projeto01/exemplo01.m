@@ -1,8 +1,8 @@
 %% Exemplo
-b=[1]; 
+b=1; 
 a=[1,-1,0.9];
 x=impseq(0,-20,120); 
-n=[-20:120];
+n=-20:120;
 h=filter(b,a,x);
 stem(n,h);
 title('Resposta ao Impulso'); 
@@ -60,10 +60,10 @@ plot(t, out)
 title('Sinal + ruído com filtro M = 15'); 
 
 %% 3
-a1=[1];
+a1=1;
 b1=[0.5, -0.5];
 
-a2=[1];
+a2=1;
 b2 = [0.5, 0.5];
 
 [y,Fs] = audioread('musica.au');
@@ -81,9 +81,9 @@ freqz(b2,a2,Fs);
 sound(h2)
 
 %% 4
-b3=[1];
-N = 200
-alfa = 0.5
+b3=1;
+N = 200;
+alfa = 0.5;
 a3=zeros(N+1,1);
 a3(1) = 1;
 a3(N+1) = alfa;
@@ -100,9 +100,9 @@ sound(h3)
 
 %%
 for alfa = 0:0.25:1.75
-    display(alfa)
+    disp(alfa)
 
-    b3=[1];
+    b3=1;
     N = 50;
     a3=zeros(N+1,1);
     a3(1) = 1;
@@ -125,6 +125,6 @@ function [x,n] = impseq(n0,n1,n2)
     % ----------------------------------------------
     % [x,n] = impseq(n0,n1,n2)
     %
-    n = [n1:n2]; 
-    x = [(n-n0) == 0];
+    n = n1:n2; 
+    x = (n-n0) == 0;
 end
