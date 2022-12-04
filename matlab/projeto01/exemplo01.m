@@ -88,7 +88,7 @@ sound(h2)
 %% Questão 04 - 
 % DESCRIPTIVE TEXT
 b3=1;
-N = 200;
+N = 2000;
 alfa = 0.5;
 a3=zeros(N+1,1);
 a3(1) = 1;
@@ -100,8 +100,8 @@ freqz(b3,a3);
 [y2,Fs2] = audioread('audio1_lab.wav');
 sound(y2)
 pause;
-
 h3=filter(b3,a3,y2);
+%h3 = [h3' , zeros(1,400000)];
 sound(h3)
 
 %%
@@ -109,7 +109,7 @@ for alfa = 0:0.25:1.75
     disp(alfa)
 
     b3=1;
-    N = 50;
+    N = 2000;
     a3=zeros(N+1,1);
     a3(1) = 1;
     a3(N+1) = alfa;
