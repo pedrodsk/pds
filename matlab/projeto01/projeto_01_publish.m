@@ -153,7 +153,13 @@ for alfa = 0:0.25:1.75
     sound(h3)
     i=i+1;
 end
-
+%%
+addpath('C:\ifpb\pds\matlab\projeto01')  
+[y,Fs] = audioread('sound005.wav');
+h = filter(Num, 1, y);
+sound(y, Fs);
+pause(5)
+sound(h, Fs);
 %% Funções extras 
 % DESCRIPTIVE TEXT
 function [x,n] = impseq(n0,n1,n2)
